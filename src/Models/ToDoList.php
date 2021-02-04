@@ -10,6 +10,10 @@ class ToDoList extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'to_do_lists';
+    public $timestamps = true;
+    protected $dates = ['deleted_at'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,8 +21,8 @@ class ToDoList extends Model
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'level',
+        'estimated_duration',
     ];
 
     /**

@@ -3,6 +3,7 @@
 namespace Kutluturkan\ToDoPlanning;
 
 use Illuminate\Support\ServiceProvider;
+use Kutluturkan\ToDoPlanning\Console\Commands\ToDoListRegister;
 
 class ToDoPlanningServiceProvider extends ServiceProvider
 {
@@ -14,11 +15,19 @@ class ToDoPlanningServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/config/todoplanning.php', 'todoplanning');
         $this->publishes([
             __DIR__ . '/config/todoplanning.php' => config_path('todoplanning.php'),
+            __DIR__ . '/views' => resource_path('views/vendor/todoplanning'),
         ]);
+
+        // Register the command if we are using the application via the CLI
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ToDoListRegister::class,
+            ]);
+        }
     }
 
     public function register()
     {
-        # code...
+        // no-command
     }
 }
