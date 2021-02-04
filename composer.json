@@ -1,0 +1,13 @@
+{
+    "name": "kutluturkan/todoplanning",
+    "description": "This will share the entire task list to your staff",
+    "type": "library",
+    "license": "MT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Kutluturkan\\ToDoPlanning\\": "src/"
+        }
+    }
+}
