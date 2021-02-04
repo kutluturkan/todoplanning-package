@@ -9,5 +9,12 @@
         "psr-4": {
             "Kutluturkan\\ToDoPlanning\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kutluturkan\\ToDoPlanning\\ToDoPlanningServiceProvider"
+            ]
+        }
     }
 }
