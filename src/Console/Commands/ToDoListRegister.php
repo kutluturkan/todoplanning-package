@@ -20,7 +20,7 @@ class ToDoListRegister extends Command
      *
      * @var string
      */
-    protected $description = 'To Do List install to table from json file';
+    protected $description = 'Loading To Do List from json file to table';
 
     /**
      * Create a new command instance.
