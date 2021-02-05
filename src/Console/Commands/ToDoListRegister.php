@@ -79,7 +79,7 @@ class ToDoListRegister extends Command
 
                 if (is_array($val) && $conf['name_is_array_key'] === true) {
 
-                    //First patter register settings
+                    //First pattern register settings
 
                     $name = trim(array_key_first($val));
                     $level = intval(trim($val[$name][$conf['level']]));
@@ -96,7 +96,7 @@ class ToDoListRegister extends Command
                     }
                 } else {
 
-                    //Second pattern register register
+                    //Second pattern register settings
 
                     $name = trim($val[$conf['name']]);
                     $level = intval(trim($val[$conf['level']]));
