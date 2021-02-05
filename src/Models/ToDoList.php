@@ -30,5 +30,26 @@ class ToDoList extends Model
      *
      * @var array
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
+
+    public function getToDoListShorting()
+    {
+        $responseData = [];
+        $toDoData = $this->orderBy('level', 'desc')->orderBy('estimated_duration', 'desc')->get()->toArray();
+
+        foreach ($toDoData as $key => $val) {
+            $responseData[$val['level']][$key] = $val;
+        }
+
+        return $responseData;
+    }
+
+    public function maxDurationTime()
+    {
+        return $this->orderBy('estimated_duration', 'desc')->first();
+    }
 }

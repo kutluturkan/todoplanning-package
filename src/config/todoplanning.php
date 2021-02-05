@@ -16,5 +16,34 @@ return [
             'estimated_duration' => 'estimated_duration'
         ],
     ],
-    'sleep_count' => 20
+    'developers' => [
+        1 => [
+            'developer' => 'Dev 1',
+            'level' => 1,
+            'staff_count' => 1
+        ],
+        2 => [
+            'developer' => 'Dev 2',
+            'level' => 2,
+            'staff_count' => 1
+        ],
+        3 => [
+            'developer' => 'Dev 3',
+            'level' => 3,
+            'staff_count' => 1
+        ],
+        4 => [
+            'developer' => 'Dev 4',
+            'level' => 4,
+            'staff_count' => 1
+        ],
+        5 => [
+            'developer' => 'Dev 5',
+            'level' => 5,
+            'staff_count' => 1
+        ]
+    ],
+    'total_level' => 5,
+    'sleep_count' => 20,
+    'max_working_time' => 45
 ];
