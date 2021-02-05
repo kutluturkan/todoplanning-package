@@ -2,6 +2,8 @@
 
 namespace Kutluturkan\ToDoPlanning\Helpers;
 
+use Kutluturkan\ToDoPlanning\Helpers\Helper;
+
 class ShareToDoList
 {
     private $TASKS, $SHARERING_TASK;
@@ -59,11 +61,13 @@ class ShareToDoList
             $min_week = round($max_time / config('todoplanning.max_working_time'), 1);
         }
 
+        $min_week = Helper::showWeekAndHours($min_week);
+
         return [
             'avarage' => $this->AVERAGE,
             'max_time' => $max_time,
             'min_week' => $min_week,
-            'tasks_planning' => $this->STAFF_TASKS
+            'tasks_planning' => Helper::shareTaskForWeek($this->STAFF_TASKS)
         ];
         //return $this->TOTAL_TASK_TIME . " / " . $this->AVERAGE;
         //return $this->STAFF_TASKS;
